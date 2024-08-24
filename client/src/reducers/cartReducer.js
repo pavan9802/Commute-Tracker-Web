@@ -2,7 +2,10 @@ import { CHANGE_TEXT, UPDATE_USER_INFO } from "../actionTypes/actionTypes";
 
 const initialState = {
   text: "0",
-  userInfo:{}
+  userInfo:{
+    "userEmail":"",
+    "uid": ""
+  }
 };
 
 export const cartReducer = (state = initialState, action) => {

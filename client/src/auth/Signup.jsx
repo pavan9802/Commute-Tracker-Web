@@ -34,10 +34,11 @@ export default function SignUp() {
         "userEmail":email,
         "uid": uid
       }))
+      console.log("Sign up successfull")
       
     } catch (err) {
       console.log(err);
-      setError("Sign in failed");
+      setError("Sign up failed");
     }
     setLoading(false);
   }
