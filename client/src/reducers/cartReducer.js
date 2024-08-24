@@ -1,7 +1,8 @@
-import { CHANGE_TEXT } from "../actionTypes/actionTypes";
+import { CHANGE_TEXT, UPDATE_USER_INFO } from "../actionTypes/actionTypes";
 
 const initialState = {
   text: "0",
+  userInfo:{}
 };
 
 export const cartReducer = (state = initialState, action) => {
@@ -11,6 +12,11 @@ export const cartReducer = (state = initialState, action) => {
         ...state,
         text: action.payload,
       };
+    case UPDATE_USER_INFO:
+      return{
+        ...state,
+        userInfo: action.payload
+      }
     default:
       return state;
   }

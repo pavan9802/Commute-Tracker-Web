@@ -1,16 +1,22 @@
 import { useSelector , useDispatch} from "react-redux";
-import { changeText } from "./actions/actions";
-
+import SignUp from "./auth/Signup";
+import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
+import "./App.css";
+import Login from "./auth/Login";
+import ForgotPassword from "./auth/ForgotPassword";
 
 function App() {
   const state = useSelector((state) => state);
   console.log(state)
-  const dispatch = useDispatch();
   return (
-    <div className="cart">
-    <h2>Number of items in Cart: {state.text}</h2>
-    <button className="green">Add Item to Cart</button>
-    <button className="red" onClick={()=>dispatch(changeText("Pavans the best coder ever"))}>Remove Item from Cart </button>
+    <div className="App">
+    <Router>
+          <Routes>
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/login" element={<Login/>} />
+            <Route path="/forgot-password" element={<ForgotPassword/>} />
+          </Routes>
+    </Router>
   </div>
   );
 }

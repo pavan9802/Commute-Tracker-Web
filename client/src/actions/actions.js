@@ -1,4 +1,4 @@
-import {  CHANGE_TEXT } from "../actionTypes/actionTypes";
+import {  CHANGE_TEXT, UPDATE_USER_INFO } from "../actionTypes/actionTypes";
 
 const changeText = (text) => {
   return {
@@ -7,5 +7,12 @@ const changeText = (text) => {
   };
 };
 
+const updateUserInfo = (user) =>{
+  return {
+    type: UPDATE_USER_INFO,
+    payload: user
+  }
+}
 
-export { changeText }
+
+export { changeText, updateUserInfo }
